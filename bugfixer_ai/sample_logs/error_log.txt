@@ -1,0 +1,9 @@
+[2026-09-26 02:03:11] INFO  routing-service: Route /api/checkout matched controller CheckoutController
+[2026-09-26 02:03:11] INFO  db-service: Connection pool healthy, active_connections=42/100
+[2026-09-26 02:03:12] INFO  routing-service: Request forwarded to payment-service
+[2026-09-26 02:03:12] ERROR payment-service: 500 Internal Server Error at payment_processor.py:245
+[2026-09-26 02:03:12] ERROR payment-service: TypeError: cannot read property 'card_token' of undefined
+[2026-09-26 02:03:12] ERROR payment-service: Traceback: process_payment() -> validate_card() -> get_token()
+[2026-09-26 02:03:13] WARN  db-service: Query took 1.2s (transactions table, order_id=88213)
+[2026-09-26 02:03:13] INFO  routing-service: Response 500 sent to client, path=/api/checkout
+[2026-09-26 02:03:14] ERROR payment-service: null pointer exception, card_token was not set before validation
